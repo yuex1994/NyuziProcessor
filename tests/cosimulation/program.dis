@@ -1,0 +1,62 @@
+
+obj/program.elf:	file format ELF32-nyuzi
+
+Disassembly of section .text:
+fail_test:
+    1000:	00 00 00 4f 	movehi s0, 0
+    1004:	00 20 41 00 	or s0, s0, 4168
+    1008:	38 fc ff 4f 	movehi s1, 524280
+    100c:	21 00 01 00 	or s1, s1, 64
+    1010:	40 00 00 a0 	load_u8 s2, (s0)
+    1014:	e2 00 00 f2 	bz s2, 28 <fail_test+0x30>
+    1018:	61 00 00 a8 	load_32 s3, (s1)
+    101c:	63 04 00 01 	and s3, s3, 1
+    1020:	c3 ff ff f3 	bz s3, -8 <fail_test+0x18>
+    1024:	41 20 00 88 	store_32 s2, 8(s1)
+    1028:	00 04 00 05 	add_i s0, s0, 1
+    102c:	f9 ff ff f7 	b -28 <fail_test+0x10>
+    1030:	18 fc ff 4f 	movehi s0, 524280
+    1034:	00 10 04 00 	or s0, s0, 260
+    1038:	3f fc ff 4f 	movehi s1, 524287
+    103c:	21 fc 7f 00 	or s1, s1, 8191
+    1040:	20 00 00 88 	store_32 s1, (s0)
+    1044:	00 00 00 f6 	b 0 <fail_test+0x44>
+
+failstr:
+    1048:	46 41 49 4c  <unknown>
+    104c:	00 ff ff ff  <unknown>
+
+pass_test:
+    1050:	00 00 00 4f 	movehi s0, 0
+    1054:	00 60 42 00 	or s0, s0, 4248
+    1058:	38 fc ff 4f 	movehi s1, 524280
+    105c:	21 00 01 00 	or s1, s1, 64
+    1060:	40 00 00 a0 	load_u8 s2, (s0)
+    1064:	e2 00 00 f2 	bz s2, 28 <pass_test+0x30>
+    1068:	61 00 00 a8 	load_32 s3, (s1)
+    106c:	63 04 00 01 	and s3, s3, 1
+    1070:	c3 ff ff f3 	bz s3, -8 <pass_test+0x18>
+    1074:	41 20 00 88 	store_32 s2, 8(s1)
+    1078:	00 04 00 05 	add_i s0, s0, 1
+    107c:	f9 ff ff f7 	b -28 <pass_test+0x10>
+    1080:	18 fc ff 4f 	movehi s0, 524280
+    1084:	00 10 04 00 	or s0, s0, 260
+    1088:	3f fc ff 4f 	movehi s1, 524287
+    108c:	21 fc 7f 00 	or s1, s1, 8191
+    1090:	20 00 00 88 	store_32 s1, (s0)
+    1094:	00 00 00 f6 	b 0 <pass_test+0x44>
+
+passstr:
+    1098:	50 41 53 53  <unknown>
+    109c:	00 ff ff ff  <unknown>
+
+_start:
+    10a0:	73 82 29 c2 	mul_f s19, s19, s19
+    10a4:	94 52 00 06 	sub_i s20, s20, 20
+    10a8:	00 00 00 ac 	getcr s0, 0
+    10ac:	20 04 00 0f 	move s1, 1
+    10b0:	21 00 b0 c0 	shl s1, s1, s0
+    10b4:	18 fc ff 4f 	movehi s0, 524280
+    10b8:	00 10 04 00 	or s0, s0, 260
+    10bc:	20 00 00 88 	store_32 s1, (s0)
+    10c0:	00 00 00 f6 	b 0 <_start+0x20>

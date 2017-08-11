@@ -25,7 +25,7 @@ import test_harness
 
 def run_verilator_test(source_file):
     test_harness.build_program([source_file])
-    result = test_harness.run_program(environment='verilator')
+    result = test_harness.run_program(environment='verilator', trace=1)
     test_harness.check_result(source_file, result)
 
 
