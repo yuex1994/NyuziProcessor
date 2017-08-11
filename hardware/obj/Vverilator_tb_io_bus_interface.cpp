@@ -5,8 +5,6 @@
 #include "Vverilator_tb_io_bus_interface.h" // For This
 #include "Vverilator_tb__Syms.h"
 
-#include "verilated_dpi.h"
-
 //--------------------
 // STATIC VARIABLES
 
@@ -33,9 +31,9 @@ Vverilator_tb_io_bus_interface::~Vverilator_tb_io_bus_interface() {
 void Vverilator_tb_io_bus_interface::_ctor_var_reset() {
     VL_DEBUG_IF(VL_PRINTF("            Vverilator_tb_io_bus_interface::_ctor_var_reset\n"); );
     // Body
-    __PVT__write_en = VL_RAND_RESET_I(1);
-    __PVT__read_en = VL_RAND_RESET_I(1);
-    __PVT__read_data = VL_RAND_RESET_I(32);
+    write_en = VL_RAND_RESET_I(1);
+    read_en = VL_RAND_RESET_I(1);
+    read_data = VL_RAND_RESET_I(32);
 }
 
 void Vverilator_tb_io_bus_interface::_configure_coverage(Vverilator_tb__Syms* __restrict vlSymsp, bool first) {

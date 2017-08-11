@@ -7,8 +7,6 @@
 
 #include "verilated_heavy.h"
 #include "Vverilator_tb__Inlines.h"
-#include "Vverilator_tb__Dpi.h"
-
 class Vverilator_tb__Syms;
 class VerilatedVcd;
 

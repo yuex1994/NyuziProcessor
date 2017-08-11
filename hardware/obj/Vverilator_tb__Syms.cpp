@@ -3,9 +3,7 @@
 
 #include "Vverilator_tb__Syms.h"
 #include "Vverilator_tb.h"
-#include "Vverilator_tb_verilator_tb.h"
 #include "Vverilator_tb___024unit.h"
-#include "Vverilator_tb_sim_sdram__C8.h"
 #include "Vverilator_tb_io_bus_interface.h"
 #include "Vverilator_tb_axi4_interface.h"
 #include "Vverilator_tb_reciprocal_rom.h"
@@ -17,99 +15,93 @@ Vverilator_tb__Syms::Vverilator_tb__Syms(Vverilator_tb* topp, const char* namep)
 	, __Vm_activity(false)
 	, __Vm_didInit(false)
 	// Setup submodule names
-	, TOP__verilator_tb              (Verilated::catName(topp->name(),"verilator_tb"))
-	, TOP__verilator_tb__axi_bus_m__BRA__0__KET__ (Verilated::catName(topp->name(),"verilator_tb.axi_bus_m[0]"))
-	, TOP__verilator_tb__axi_bus_m__BRA__1__KET__ (Verilated::catName(topp->name(),"verilator_tb.axi_bus_m[1]"))
-	, TOP__verilator_tb__axi_bus_s__BRA__0__KET__ (Verilated::catName(topp->name(),"verilator_tb.axi_bus_s[0]"))
-	, TOP__verilator_tb__axi_bus_s__BRA__1__KET__ (Verilated::catName(topp->name(),"verilator_tb.axi_bus_s[1]"))
-	, TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__0__KET____DOT__rom (Verilated::catName(topp->name(),"verilator_tb.nyuzi.core_gen[0].core.int_execute_stage.lane_alu_gen[0].rom"))
-	, TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__10__KET____DOT__rom (Verilated::catName(topp->name(),"verilator_tb.nyuzi.core_gen[0].core.int_execute_stage.lane_alu_gen[10].rom"))
-	, TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__11__KET____DOT__rom (Verilated::catName(topp->name(),"verilator_tb.nyuzi.core_gen[0].core.int_execute_stage.lane_alu_gen[11].rom"))
-	, TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__12__KET____DOT__rom (Verilated::catName(topp->name(),"verilator_tb.nyuzi.core_gen[0].core.int_execute_stage.lane_alu_gen[12].rom"))
-	, TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__13__KET____DOT__rom (Verilated::catName(topp->name(),"verilator_tb.nyuzi.core_gen[0].core.int_execute_stage.lane_alu_gen[13].rom"))
-	, TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__14__KET____DOT__rom (Verilated::catName(topp->name(),"verilator_tb.nyuzi.core_gen[0].core.int_execute_stage.lane_alu_gen[14].rom"))
-	, TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__15__KET____DOT__rom (Verilated::catName(topp->name(),"verilator_tb.nyuzi.core_gen[0].core.int_execute_stage.lane_alu_gen[15].rom"))
-	, TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__1__KET____DOT__rom (Verilated::catName(topp->name(),"verilator_tb.nyuzi.core_gen[0].core.int_execute_stage.lane_alu_gen[1].rom"))
-	, TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__2__KET____DOT__rom (Verilated::catName(topp->name(),"verilator_tb.nyuzi.core_gen[0].core.int_execute_stage.lane_alu_gen[2].rom"))
-	, TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__3__KET____DOT__rom (Verilated::catName(topp->name(),"verilator_tb.nyuzi.core_gen[0].core.int_execute_stage.lane_alu_gen[3].rom"))
-	, TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__4__KET____DOT__rom (Verilated::catName(topp->name(),"verilator_tb.nyuzi.core_gen[0].core.int_execute_stage.lane_alu_gen[4].rom"))
-	, TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__5__KET____DOT__rom (Verilated::catName(topp->name(),"verilator_tb.nyuzi.core_gen[0].core.int_execute_stage.lane_alu_gen[5].rom"))
-	, TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__6__KET____DOT__rom (Verilated::catName(topp->name(),"verilator_tb.nyuzi.core_gen[0].core.int_execute_stage.lane_alu_gen[6].rom"))
-	, TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__7__KET____DOT__rom (Verilated::catName(topp->name(),"verilator_tb.nyuzi.core_gen[0].core.int_execute_stage.lane_alu_gen[7].rom"))
-	, TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__8__KET____DOT__rom (Verilated::catName(topp->name(),"verilator_tb.nyuzi.core_gen[0].core.int_execute_stage.lane_alu_gen[8].rom"))
-	, TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__9__KET____DOT__rom (Verilated::catName(topp->name(),"verilator_tb.nyuzi.core_gen[0].core.int_execute_stage.lane_alu_gen[9].rom"))
-	, TOP__verilator_tb__nyuzi__DOT__interconnect_io_bus (Verilated::catName(topp->name(),"verilator_tb.nyuzi.interconnect_io_bus"))
-	, TOP__verilator_tb__nyuzi__DOT__perf_io_bus (Verilated::catName(topp->name(),"verilator_tb.nyuzi.perf_io_bus"))
-	, TOP__verilator_tb__nyuzi_io_bus (Verilated::catName(topp->name(),"verilator_tb.nyuzi_io_bus"))
-	, TOP__verilator_tb__peripheral_io_bus__BRA__1__KET__ (Verilated::catName(topp->name(),"verilator_tb.peripheral_io_bus[1]"))
-	, TOP__verilator_tb__peripheral_io_bus__BRA__2__KET__ (Verilated::catName(topp->name(),"verilator_tb.peripheral_io_bus[2]"))
-	, TOP__verilator_tb__peripheral_io_bus__BRA__3__KET__ (Verilated::catName(topp->name(),"verilator_tb.peripheral_io_bus[3]"))
-	, TOP__verilator_tb__peripheral_io_bus__BRA__5__KET__ (Verilated::catName(topp->name(),"verilator_tb.peripheral_io_bus[5]"))
-	, TOP__verilator_tb__memory      (Verilated::catName(topp->name(),"verilator_tb.memory"))
+	, TOP__verilator_tb__DOT__axi_bus_m__BRA__0__KET__ (Verilated::catName(topp->name(),"verilator_tb.axi_bus_m[0]"))
+	, TOP__verilator_tb__DOT__axi_bus_m__BRA__1__KET__ (Verilated::catName(topp->name(),"verilator_tb.axi_bus_m[1]"))
+	, TOP__verilator_tb__DOT__axi_bus_s__BRA__0__KET__ (Verilated::catName(topp->name(),"verilator_tb.axi_bus_s[0]"))
+	, TOP__verilator_tb__DOT__axi_bus_s__BRA__1__KET__ (Verilated::catName(topp->name(),"verilator_tb.axi_bus_s[1]"))
+	, TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__0__KET____DOT__rom (Verilated::catName(topp->name(),"verilator_tb.nyuzi.core_gen[0].core.int_execute_stage.lane_alu_gen[0].rom"))
+	, TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__10__KET____DOT__rom (Verilated::catName(topp->name(),"verilator_tb.nyuzi.core_gen[0].core.int_execute_stage.lane_alu_gen[10].rom"))
+	, TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__11__KET____DOT__rom (Verilated::catName(topp->name(),"verilator_tb.nyuzi.core_gen[0].core.int_execute_stage.lane_alu_gen[11].rom"))
+	, TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__12__KET____DOT__rom (Verilated::catName(topp->name(),"verilator_tb.nyuzi.core_gen[0].core.int_execute_stage.lane_alu_gen[12].rom"))
+	, TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__13__KET____DOT__rom (Verilated::catName(topp->name(),"verilator_tb.nyuzi.core_gen[0].core.int_execute_stage.lane_alu_gen[13].rom"))
+	, TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__14__KET____DOT__rom (Verilated::catName(topp->name(),"verilator_tb.nyuzi.core_gen[0].core.int_execute_stage.lane_alu_gen[14].rom"))
+	, TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__15__KET____DOT__rom (Verilated::catName(topp->name(),"verilator_tb.nyuzi.core_gen[0].core.int_execute_stage.lane_alu_gen[15].rom"))
+	, TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__1__KET____DOT__rom (Verilated::catName(topp->name(),"verilator_tb.nyuzi.core_gen[0].core.int_execute_stage.lane_alu_gen[1].rom"))
+	, TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__2__KET____DOT__rom (Verilated::catName(topp->name(),"verilator_tb.nyuzi.core_gen[0].core.int_execute_stage.lane_alu_gen[2].rom"))
+	, TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__3__KET____DOT__rom (Verilated::catName(topp->name(),"verilator_tb.nyuzi.core_gen[0].core.int_execute_stage.lane_alu_gen[3].rom"))
+	, TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__4__KET____DOT__rom (Verilated::catName(topp->name(),"verilator_tb.nyuzi.core_gen[0].core.int_execute_stage.lane_alu_gen[4].rom"))
+	, TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__5__KET____DOT__rom (Verilated::catName(topp->name(),"verilator_tb.nyuzi.core_gen[0].core.int_execute_stage.lane_alu_gen[5].rom"))
+	, TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__6__KET____DOT__rom (Verilated::catName(topp->name(),"verilator_tb.nyuzi.core_gen[0].core.int_execute_stage.lane_alu_gen[6].rom"))
+	, TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__7__KET____DOT__rom (Verilated::catName(topp->name(),"verilator_tb.nyuzi.core_gen[0].core.int_execute_stage.lane_alu_gen[7].rom"))
+	, TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__8__KET____DOT__rom (Verilated::catName(topp->name(),"verilator_tb.nyuzi.core_gen[0].core.int_execute_stage.lane_alu_gen[8].rom"))
+	, TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__9__KET____DOT__rom (Verilated::catName(topp->name(),"verilator_tb.nyuzi.core_gen[0].core.int_execute_stage.lane_alu_gen[9].rom"))
+	, TOP__verilator_tb__DOT__nyuzi__DOT__interconnect_io_bus (Verilated::catName(topp->name(),"verilator_tb.nyuzi.interconnect_io_bus"))
+	, TOP__verilator_tb__DOT__nyuzi__DOT__perf_io_bus (Verilated::catName(topp->name(),"verilator_tb.nyuzi.perf_io_bus"))
+	, TOP__verilator_tb__DOT__nyuzi_io_bus (Verilated::catName(topp->name(),"verilator_tb.nyuzi_io_bus"))
+	, TOP__verilator_tb__DOT__peripheral_io_bus__BRA__1__KET__ (Verilated::catName(topp->name(),"verilator_tb.peripheral_io_bus[1]"))
+	, TOP__verilator_tb__DOT__peripheral_io_bus__BRA__2__KET__ (Verilated::catName(topp->name(),"verilator_tb.peripheral_io_bus[2]"))
+	, TOP__verilator_tb__DOT__peripheral_io_bus__BRA__3__KET__ (Verilated::catName(topp->name(),"verilator_tb.peripheral_io_bus[3]"))
+	, TOP__verilator_tb__DOT__peripheral_io_bus__BRA__5__KET__ (Verilated::catName(topp->name(),"verilator_tb.peripheral_io_bus[5]"))
 {
     // Pointer to top level
     TOPp = topp;
     // Setup each module's pointers to their submodules
-    TOPp->verilator_tb              = &TOP__verilator_tb;
-    TOPp->verilator_tb->__PVT__axi_bus_m__BRA__0__KET__  = &TOP__verilator_tb__axi_bus_m__BRA__0__KET__;
-    TOPp->verilator_tb->__PVT__axi_bus_m__BRA__1__KET__  = &TOP__verilator_tb__axi_bus_m__BRA__1__KET__;
-    TOPp->verilator_tb->__PVT__axi_bus_s__BRA__0__KET__  = &TOP__verilator_tb__axi_bus_s__BRA__0__KET__;
-    TOPp->verilator_tb->__PVT__axi_bus_s__BRA__1__KET__  = &TOP__verilator_tb__axi_bus_s__BRA__1__KET__;
-    TOPp->verilator_tb->__PVT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__0__KET____DOT__rom  = &TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__0__KET____DOT__rom;
-    TOPp->verilator_tb->__PVT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__10__KET____DOT__rom  = &TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__10__KET____DOT__rom;
-    TOPp->verilator_tb->__PVT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__11__KET____DOT__rom  = &TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__11__KET____DOT__rom;
-    TOPp->verilator_tb->__PVT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__12__KET____DOT__rom  = &TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__12__KET____DOT__rom;
-    TOPp->verilator_tb->__PVT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__13__KET____DOT__rom  = &TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__13__KET____DOT__rom;
-    TOPp->verilator_tb->__PVT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__14__KET____DOT__rom  = &TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__14__KET____DOT__rom;
-    TOPp->verilator_tb->__PVT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__15__KET____DOT__rom  = &TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__15__KET____DOT__rom;
-    TOPp->verilator_tb->__PVT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__1__KET____DOT__rom  = &TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__1__KET____DOT__rom;
-    TOPp->verilator_tb->__PVT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__2__KET____DOT__rom  = &TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__2__KET____DOT__rom;
-    TOPp->verilator_tb->__PVT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__3__KET____DOT__rom  = &TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__3__KET____DOT__rom;
-    TOPp->verilator_tb->__PVT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__4__KET____DOT__rom  = &TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__4__KET____DOT__rom;
-    TOPp->verilator_tb->__PVT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__5__KET____DOT__rom  = &TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__5__KET____DOT__rom;
-    TOPp->verilator_tb->__PVT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__6__KET____DOT__rom  = &TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__6__KET____DOT__rom;
-    TOPp->verilator_tb->__PVT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__7__KET____DOT__rom  = &TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__7__KET____DOT__rom;
-    TOPp->verilator_tb->__PVT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__8__KET____DOT__rom  = &TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__8__KET____DOT__rom;
-    TOPp->verilator_tb->__PVT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__9__KET____DOT__rom  = &TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__9__KET____DOT__rom;
-    TOPp->verilator_tb->__PVT__nyuzi__DOT__interconnect_io_bus  = &TOP__verilator_tb__nyuzi__DOT__interconnect_io_bus;
-    TOPp->verilator_tb->__PVT__nyuzi__DOT__perf_io_bus  = &TOP__verilator_tb__nyuzi__DOT__perf_io_bus;
-    TOPp->verilator_tb->__PVT__nyuzi_io_bus  = &TOP__verilator_tb__nyuzi_io_bus;
-    TOPp->verilator_tb->__PVT__peripheral_io_bus__BRA__1__KET__  = &TOP__verilator_tb__peripheral_io_bus__BRA__1__KET__;
-    TOPp->verilator_tb->__PVT__peripheral_io_bus__BRA__2__KET__  = &TOP__verilator_tb__peripheral_io_bus__BRA__2__KET__;
-    TOPp->verilator_tb->__PVT__peripheral_io_bus__BRA__3__KET__  = &TOP__verilator_tb__peripheral_io_bus__BRA__3__KET__;
-    TOPp->verilator_tb->__PVT__peripheral_io_bus__BRA__5__KET__  = &TOP__verilator_tb__peripheral_io_bus__BRA__5__KET__;
-    TOPp->verilator_tb->memory      = &TOP__verilator_tb__memory;
+    TOPp->__PVT__verilator_tb__DOT__axi_bus_m__BRA__0__KET__  = &TOP__verilator_tb__DOT__axi_bus_m__BRA__0__KET__;
+    TOPp->__PVT__verilator_tb__DOT__axi_bus_m__BRA__1__KET__  = &TOP__verilator_tb__DOT__axi_bus_m__BRA__1__KET__;
+    TOPp->__PVT__verilator_tb__DOT__axi_bus_s__BRA__0__KET__  = &TOP__verilator_tb__DOT__axi_bus_s__BRA__0__KET__;
+    TOPp->__PVT__verilator_tb__DOT__axi_bus_s__BRA__1__KET__  = &TOP__verilator_tb__DOT__axi_bus_s__BRA__1__KET__;
+    TOPp->__PVT__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__0__KET____DOT__rom  = &TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__0__KET____DOT__rom;
+    TOPp->__PVT__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__10__KET____DOT__rom  = &TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__10__KET____DOT__rom;
+    TOPp->__PVT__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__11__KET____DOT__rom  = &TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__11__KET____DOT__rom;
+    TOPp->__PVT__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__12__KET____DOT__rom  = &TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__12__KET____DOT__rom;
+    TOPp->__PVT__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__13__KET____DOT__rom  = &TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__13__KET____DOT__rom;
+    TOPp->__PVT__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__14__KET____DOT__rom  = &TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__14__KET____DOT__rom;
+    TOPp->__PVT__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__15__KET____DOT__rom  = &TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__15__KET____DOT__rom;
+    TOPp->__PVT__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__1__KET____DOT__rom  = &TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__1__KET____DOT__rom;
+    TOPp->__PVT__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__2__KET____DOT__rom  = &TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__2__KET____DOT__rom;
+    TOPp->__PVT__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__3__KET____DOT__rom  = &TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__3__KET____DOT__rom;
+    TOPp->__PVT__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__4__KET____DOT__rom  = &TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__4__KET____DOT__rom;
+    TOPp->__PVT__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__5__KET____DOT__rom  = &TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__5__KET____DOT__rom;
+    TOPp->__PVT__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__6__KET____DOT__rom  = &TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__6__KET____DOT__rom;
+    TOPp->__PVT__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__7__KET____DOT__rom  = &TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__7__KET____DOT__rom;
+    TOPp->__PVT__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__8__KET____DOT__rom  = &TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__8__KET____DOT__rom;
+    TOPp->__PVT__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__9__KET____DOT__rom  = &TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__9__KET____DOT__rom;
+    TOPp->__PVT__verilator_tb__DOT__nyuzi__DOT__interconnect_io_bus  = &TOP__verilator_tb__DOT__nyuzi__DOT__interconnect_io_bus;
+    TOPp->__PVT__verilator_tb__DOT__nyuzi__DOT__perf_io_bus  = &TOP__verilator_tb__DOT__nyuzi__DOT__perf_io_bus;
+    TOPp->__PVT__verilator_tb__DOT__nyuzi_io_bus  = &TOP__verilator_tb__DOT__nyuzi_io_bus;
+    TOPp->__PVT__verilator_tb__DOT__peripheral_io_bus__BRA__1__KET__  = &TOP__verilator_tb__DOT__peripheral_io_bus__BRA__1__KET__;
+    TOPp->__PVT__verilator_tb__DOT__peripheral_io_bus__BRA__2__KET__  = &TOP__verilator_tb__DOT__peripheral_io_bus__BRA__2__KET__;
+    TOPp->__PVT__verilator_tb__DOT__peripheral_io_bus__BRA__3__KET__  = &TOP__verilator_tb__DOT__peripheral_io_bus__BRA__3__KET__;
+    TOPp->__PVT__verilator_tb__DOT__peripheral_io_bus__BRA__5__KET__  = &TOP__verilator_tb__DOT__peripheral_io_bus__BRA__5__KET__;
     // Setup each module's pointer back to symbol table (for public functions)
     TOPp->__Vconfigure(this, true);
-    TOP__verilator_tb.__Vconfigure(this, true);
-    TOP__verilator_tb__axi_bus_m__BRA__0__KET__.__Vconfigure(this, true);
-    TOP__verilator_tb__axi_bus_m__BRA__1__KET__.__Vconfigure(this, false);
-    TOP__verilator_tb__axi_bus_s__BRA__0__KET__.__Vconfigure(this, false);
-    TOP__verilator_tb__axi_bus_s__BRA__1__KET__.__Vconfigure(this, false);
-    TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__0__KET____DOT__rom.__Vconfigure(this, true);
-    TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__10__KET____DOT__rom.__Vconfigure(this, false);
-    TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__11__KET____DOT__rom.__Vconfigure(this, false);
-    TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__12__KET____DOT__rom.__Vconfigure(this, false);
-    TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__13__KET____DOT__rom.__Vconfigure(this, false);
-    TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__14__KET____DOT__rom.__Vconfigure(this, false);
-    TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__15__KET____DOT__rom.__Vconfigure(this, false);
-    TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__1__KET____DOT__rom.__Vconfigure(this, false);
-    TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__2__KET____DOT__rom.__Vconfigure(this, false);
-    TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__3__KET____DOT__rom.__Vconfigure(this, false);
-    TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__4__KET____DOT__rom.__Vconfigure(this, false);
-    TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__5__KET____DOT__rom.__Vconfigure(this, false);
-    TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__6__KET____DOT__rom.__Vconfigure(this, false);
-    TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__7__KET____DOT__rom.__Vconfigure(this, false);
-    TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__8__KET____DOT__rom.__Vconfigure(this, false);
-    TOP__verilator_tb__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__9__KET____DOT__rom.__Vconfigure(this, false);
-    TOP__verilator_tb__nyuzi__DOT__interconnect_io_bus.__Vconfigure(this, true);
-    TOP__verilator_tb__nyuzi__DOT__perf_io_bus.__Vconfigure(this, false);
-    TOP__verilator_tb__nyuzi_io_bus.__Vconfigure(this, false);
-    TOP__verilator_tb__peripheral_io_bus__BRA__1__KET__.__Vconfigure(this, false);
-    TOP__verilator_tb__peripheral_io_bus__BRA__2__KET__.__Vconfigure(this, false);
-    TOP__verilator_tb__peripheral_io_bus__BRA__3__KET__.__Vconfigure(this, false);
-    TOP__verilator_tb__peripheral_io_bus__BRA__5__KET__.__Vconfigure(this, false);
-    TOP__verilator_tb__memory.__Vconfigure(this, true);
+    TOP__verilator_tb__DOT__axi_bus_m__BRA__0__KET__.__Vconfigure(this, true);
+    TOP__verilator_tb__DOT__axi_bus_m__BRA__1__KET__.__Vconfigure(this, false);
+    TOP__verilator_tb__DOT__axi_bus_s__BRA__0__KET__.__Vconfigure(this, false);
+    TOP__verilator_tb__DOT__axi_bus_s__BRA__1__KET__.__Vconfigure(this, false);
+    TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__0__KET____DOT__rom.__Vconfigure(this, true);
+    TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__10__KET____DOT__rom.__Vconfigure(this, false);
+    TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__11__KET____DOT__rom.__Vconfigure(this, false);
+    TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__12__KET____DOT__rom.__Vconfigure(this, false);
+    TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__13__KET____DOT__rom.__Vconfigure(this, false);
+    TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__14__KET____DOT__rom.__Vconfigure(this, false);
+    TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__15__KET____DOT__rom.__Vconfigure(this, false);
+    TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__1__KET____DOT__rom.__Vconfigure(this, false);
+    TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__2__KET____DOT__rom.__Vconfigure(this, false);
+    TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__3__KET____DOT__rom.__Vconfigure(this, false);
+    TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__4__KET____DOT__rom.__Vconfigure(this, false);
+    TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__5__KET____DOT__rom.__Vconfigure(this, false);
+    TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__6__KET____DOT__rom.__Vconfigure(this, false);
+    TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__7__KET____DOT__rom.__Vconfigure(this, false);
+    TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__8__KET____DOT__rom.__Vconfigure(this, false);
+    TOP__verilator_tb__DOT__nyuzi__DOT__core_gen__BRA__0__KET____DOT__core__DOT__int_execute_stage__DOT__lane_alu_gen__BRA__9__KET____DOT__rom.__Vconfigure(this, false);
+    TOP__verilator_tb__DOT__nyuzi__DOT__interconnect_io_bus.__Vconfigure(this, true);
+    TOP__verilator_tb__DOT__nyuzi__DOT__perf_io_bus.__Vconfigure(this, false);
+    TOP__verilator_tb__DOT__nyuzi_io_bus.__Vconfigure(this, false);
+    TOP__verilator_tb__DOT__peripheral_io_bus__BRA__1__KET__.__Vconfigure(this, false);
+    TOP__verilator_tb__DOT__peripheral_io_bus__BRA__2__KET__.__Vconfigure(this, false);
+    TOP__verilator_tb__DOT__peripheral_io_bus__BRA__3__KET__.__Vconfigure(this, false);
+    TOP__verilator_tb__DOT__peripheral_io_bus__BRA__5__KET__.__Vconfigure(this, false);
     // Setup scope names
     __Vscope_verilator_tb__loopback_uart__rx_fifo.configure(this,name(),"verilator_tb.loopback_uart.rx_fifo");
     __Vscope_verilator_tb__loopback_uart__uart_receive.configure(this,name(),"verilator_tb.loopback_uart.uart_receive");
@@ -166,15 +158,8 @@ Vverilator_tb__Syms::Vverilator_tb__Syms(Vverilator_tb* topp, const char* namep)
     __Vscope_verilator_tb__nyuzi__l2_cache__l2_cache_tag_stage__cache_lru.configure(this,name(),"verilator_tb.nyuzi.l2_cache.l2_cache_tag_stage.cache_lru");
     __Vscope_verilator_tb__nyuzi__l2_cache__l2_cache_update_stage.configure(this,name(),"verilator_tb.nyuzi.l2_cache.l2_cache_update_stage");
     __Vscope_verilator_tb__ps2_controller__input_fifo.configure(this,name(),"verilator_tb.ps2_controller.input_fifo");
-    __Vscope_verilator_tb__sdram_controller.configure(this,name(),"verilator_tb.sdram_controller");
-    __Vscope_verilator_tb__sdram_controller__load_fifo.configure(this,name(),"verilator_tb.sdram_controller.load_fifo");
-    __Vscope_verilator_tb__sdram_controller__store_fifo.configure(this,name(),"verilator_tb.sdram_controller.store_fifo");
     __Vscope_verilator_tb__sim_sdmmc.configure(this,name(),"verilator_tb.sim_sdmmc");
     __Vscope_verilator_tb__spi_controller.configure(this,name(),"verilator_tb.spi_controller");
     __Vscope_verilator_tb__trace_logger.configure(this,name(),"verilator_tb.trace_logger");
     __Vscope_verilator_tb__trace_logger__dump_trace_event.configure(this,name(),"verilator_tb.trace_logger.dump_trace_event");
-    // Setup export functions
-    for (int __Vfinal=0; __Vfinal<2; __Vfinal++) {
-	__Vscope_verilator_tb__memory.varInsert(__Vfinal,"sdram_data", &(TOP__verilator_tb__memory.sdram_data), VLVT_UINT32,VLVD_NODIR|VLVF_PUB_RW,2 ,31,0 ,4194303,0);
-    }
 }

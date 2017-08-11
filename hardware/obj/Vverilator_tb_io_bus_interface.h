@@ -7,8 +7,6 @@
 
 #include "verilated_heavy.h"
 #include "Vverilator_tb__Inlines.h"
-#include "Vverilator_tb__Dpi.h"
-
 class Vverilator_tb__Syms;
 class VerilatedVcd;
 
@@ -21,10 +19,10 @@ VL_MODULE(Vverilator_tb_io_bus_interface) {
     // PORTS
     
     // LOCAL SIGNALS
-    VL_SIG8(__PVT__write_en,0,0);
-    VL_SIG8(__PVT__read_en,0,0);
+    VL_SIG8(write_en,0,0);
+    VL_SIG8(read_en,0,0);
     //char	__VpadToAlign6[2];
-    VL_SIG(__PVT__read_data,31,0);
+    VL_SIG(read_data,31,0);
     
     // LOCAL VARIABLES
     

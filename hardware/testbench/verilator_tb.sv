@@ -134,7 +134,7 @@ module verilator_tb(
     localparam SDRAM_ROW_ADDR_WIDTH = 12;
     localparam SDRAM_COL_ADDR_WIDTH = $clog2(MEM_SIZE / ((1 << SDRAM_ROW_ADDR_WIDTH)
         * SDRAM_NUM_BANKS * (SDRAM_DATA_WIDTH / 8)));
-
+`ifdef USE_SDRAM
     sdram_controller #(
         .DATA_WIDTH(SDRAM_DATA_WIDTH),
         .ROW_ADDR_WIDTH(SDRAM_ROW_ADDR_WIDTH),
@@ -144,14 +144,23 @@ module verilator_tb(
     ) sdram_controller(
         .axi_bus(axi_bus_s[0]),
         .*);
-
+    localparam SDRAM_NUM_BANKS = 4;
+    localparam SDRAM_ROW_ADDR_WIDTH = 12;
+    localparam SDRAM_COL_ADDR_WIDTH = $clog2(MEM_SIZE / ((1 << SDRAM_ROW_ADDR_WIDTH) * SDRAM_NUM_BANKS * (SDRAM_DATA_WIDTH / 8)));
     sim_sdram #(
         .DATA_WIDTH(SDRAM_DATA_WIDTH),
         .ROW_ADDR_WIDTH(SDRAM_ROW_ADDR_WIDTH),
         .COL_ADDR_WIDTH(SDRAM_COL_ADDR_WIDTH),
         .MAX_REFRESH_INTERVAL(800)
     ) memory(.*);
-
+`else
+    axi_sram memory(
+        .axi_bus(axi_bus_s[0]),
+	.loader_we(0),
+	.loader_addr(0),
+	.loader_data(0),
+	.*);
+`endif
     // The s1 interface is not connected to anything in this configuration.
     assign axi_bus_m[1].m_awvalid = 0;
     assign axi_bus_m[1].m_wvalid = 0;
@@ -340,7 +349,7 @@ module verilator_tb(
     begin
         for (int line_offset = 0; line_offset < `CACHE_LINE_WORDS; line_offset++)
         begin
-            memory.sdram_data[(int'(tag) * `L2_SETS + int'(set)) * `CACHE_LINE_WORDS + line_offset] =
+            memory.memory.data[(int'(tag) * `L2_SETS + int'(set)) * `CACHE_LINE_WORDS + line_offset] =
                 int'(nyuzi.l2_cache.l2_cache_read_stage.sram_l2_data.data[{way, set}]
                  >> ((`CACHE_LINE_WORDS - 1 - line_offset) * 32));
         end
@@ -411,10 +420,10 @@ module verilator_tb(
             profile_en = 0;
 
         for (int i = 0; i < MEM_SIZE; i++)
-            memory.sdram_data[i] = 0;
+            memory.memory.data[i] = 0;
 
         if ($value$plusargs("bin=%s", filename) != 0)
-            $readmemh(filename, memory.sdram_data);
+            $readmemh(filename, memory.memory.data);
         else
         begin
             $display("No memory image file specified with +bin");
@@ -439,10 +448,10 @@ module verilator_tb(
             dump_fp = $fopen(filename, "wb");
             for (int i = 0; i < mem_dump_length; i += 4)
             begin
-                $c("fputc(", memory.sdram_data[(mem_dump_start + i) / 4][31:24], ", VL_CVT_I_FP(", dump_fp, "));");
-                $c("fputc(", memory.sdram_data[(mem_dump_start + i) / 4][23:16], ", VL_CVT_I_FP(", dump_fp, "));");
-                $c("fputc(", memory.sdram_data[(mem_dump_start + i) / 4][15:8], ", VL_CVT_I_FP(", dump_fp, "));");
-                $c("fputc(", memory.sdram_data[(mem_dump_start + i) / 4][7:0], ", VL_CVT_I_FP(", dump_fp, "));");
+                $c("fputc(", memory.memory.data[(mem_dump_start + i) / 4][31:24], ", VL_CVT_I_FP(", dump_fp, "));");
+                $c("fputc(", memory.memory.data[(mem_dump_start + i) / 4][23:16], ", VL_CVT_I_FP(", dump_fp, "));");
+                $c("fputc(", memory.memory.data[(mem_dump_start + i) / 4][15:8], ", VL_CVT_I_FP(", dump_fp, "));");
+                $c("fputc(", memory.memory.data[(mem_dump_start + i) / 4][7:0], ", VL_CVT_I_FP(", dump_fp, "));");
             end
 
             $fclose(dump_fp);

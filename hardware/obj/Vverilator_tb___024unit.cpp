@@ -5,8 +5,6 @@
 #include "Vverilator_tb___024unit.h" // For This
 #include "Vverilator_tb__Syms.h"
 
-#include "verilated_dpi.h"
-
 //--------------------
 // STATIC VARIABLES
 

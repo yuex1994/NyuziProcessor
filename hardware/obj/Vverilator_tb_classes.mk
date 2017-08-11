@@ -14,9 +14,7 @@ VM_TRACE = 1
 # Generated module classes, fast-path, compile with highest optimization
 VM_CLASSES_FAST += \
 	Vverilator_tb \
-	Vverilator_tb_verilator_tb \
 	Vverilator_tb___024unit \
-	Vverilator_tb_sim_sdram__C8 \
 	Vverilator_tb_io_bus_interface \
 	Vverilator_tb_axi4_interface \
 	Vverilator_tb_reciprocal_rom \
@@ -26,7 +24,6 @@ VM_CLASSES_SLOW += \
 
 # Generated support classes, fast-path, compile with highest optimization
 VM_SUPPORT_FAST += \
-	Vverilator_tb__Dpi \
 	Vverilator_tb__Trace \
 
 # Generated support classes, non-fast-path, compile with low/medium optimization
@@ -37,7 +34,6 @@ VM_SUPPORT_SLOW += \
 # Global classes, need linked once per executable, fast-path, compile with highest optimization
 VM_GLOBAL_FAST += \
 	verilated \
-	verilated_dpi \
 	verilated_vcd_c \
 
 # Global classes, need linked once per executable, non-fast-path, compile with low/medium optimization

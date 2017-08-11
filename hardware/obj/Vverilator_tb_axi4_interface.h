@@ -7,8 +7,6 @@
 
 #include "verilated_heavy.h"
 #include "Vverilator_tb__Inlines.h"
-#include "Vverilator_tb__Dpi.h"
-
 class Vverilator_tb__Syms;
 class VerilatedVcd;
 
@@ -21,30 +19,30 @@ VL_MODULE(Vverilator_tb_axi4_interface) {
     // PORTS
     
     // LOCAL SIGNALS
-    VL_SIG8(__PVT__m_awlen,7,0);
-    VL_SIG8(__PVT__m_awsize,2,0);
-    VL_SIG8(__PVT__m_awburst,1,0);
-    VL_SIG8(__PVT__m_awcache,3,0);
-    VL_SIG8(__PVT__m_awvalid,0,0);
-    VL_SIG8(__PVT__s_awready,0,0);
-    VL_SIG8(__PVT__m_wstrb,3,0);
-    VL_SIG8(__PVT__m_wlast,0,0);
-    VL_SIG8(__PVT__m_wvalid,0,0);
-    VL_SIG8(__PVT__s_wready,0,0);
-    VL_SIG8(__PVT__s_bvalid,0,0);
-    VL_SIG8(__PVT__m_arlen,7,0);
-    VL_SIG8(__PVT__m_arsize,2,0);
-    VL_SIG8(__PVT__m_arburst,1,0);
-    VL_SIG8(__PVT__m_arcache,3,0);
-    VL_SIG8(__PVT__m_arvalid,0,0);
-    VL_SIG8(__PVT__s_arready,0,0);
-    VL_SIG8(__PVT__s_rvalid,0,0);
-    VL_SIG8(__PVT__m_rready,0,0);
+    VL_SIG8(m_awlen,7,0);
+    VL_SIG8(m_awsize,2,0);
+    VL_SIG8(m_awburst,1,0);
+    VL_SIG8(m_awcache,3,0);
+    VL_SIG8(m_awvalid,0,0);
+    VL_SIG8(s_awready,0,0);
+    VL_SIG8(m_wstrb,3,0);
+    VL_SIG8(m_wlast,0,0);
+    VL_SIG8(m_wvalid,0,0);
+    VL_SIG8(s_wready,0,0);
+    VL_SIG8(s_bvalid,0,0);
+    VL_SIG8(m_arlen,7,0);
+    VL_SIG8(m_arsize,2,0);
+    VL_SIG8(m_arburst,1,0);
+    VL_SIG8(m_arcache,3,0);
+    VL_SIG8(m_arvalid,0,0);
+    VL_SIG8(s_arready,0,0);
+    VL_SIG8(s_rvalid,0,0);
+    VL_SIG8(m_rready,0,0);
     //char	__VpadToAlign23[1];
-    VL_SIG(__PVT__m_awaddr,31,0);
-    VL_SIG(__PVT__m_wdata,31,0);
-    VL_SIG(__PVT__m_araddr,31,0);
-    VL_SIG(__PVT__s_rdata,31,0);
+    VL_SIG(m_awaddr,31,0);
+    VL_SIG(m_wdata,31,0);
+    VL_SIG(m_araddr,31,0);
+    VL_SIG(s_rdata,31,0);
     
     // LOCAL VARIABLES
     
